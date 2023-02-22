@@ -20,7 +20,6 @@ const getOperators = ()=>{
         fs.writeFileSync(operatorsDB, '[]');
         operators = [];
     }
-
     return operators;
 }
 

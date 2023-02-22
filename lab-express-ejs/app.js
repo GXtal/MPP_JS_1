@@ -9,6 +9,8 @@ const port = 5000;
 // static files
 
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/img', express.static(__dirname + 'public/img'));
 app.use('/js', express.static(__dirname + 'public/js'));
@@ -22,11 +24,11 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 //routes
-const mainPage=require('./src/routes/mainpage');
-const editOperator = require('./src/routes/editOperator');
+const mainPageRouter=require('./src/routes/mainpage');
+const editOperatorRouter = require('./src/routes/editOperator');
 
-app.use('/', mainPage);
-app.use('/edit',editOperator);
+app.use('/', mainPageRouter);
+app.use('/edit',editOperatorRouter);
 
 app.use(function(req, res, next) {
     next(createError(404));

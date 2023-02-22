@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Operator list</title>
+    <title>Operator</title>
     <script src="javascripts/SelectWithCustomInput.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body class="">
-<%- include('partial/header')%>
+<%- include('partials/header')%>
 
 <div class="">
     
@@ -19,13 +19,13 @@
         </div>
 
         <div class="">
-            <input id="characterName" class="" value="<%=character.name%>">
-            <label for="characterName">Name:</label>
+            <input id="name" name="name" class="" value="<%=character.name%>">
+            <label for="name">Name:</label>
         </div>
 
         <div class="">
-            <select id="characterRarity" name="rarity" class="form-select">
-                <option value="<%=character.rarity%>" selected hidden><%=character.rarity%></option>
+            <select id="rarity" name="rarity" class="">
+                <option value="<%=character.rarity%>" selected hidden> <%=character.rarityDesc%></option>
                 <option value="6">Six star</option>
                 <option value="5">Five star</option>
                 <option value="4">Four star</option>
@@ -33,12 +33,11 @@
                 <option value="2">Two star</option>
                 <option value="1">One star</option>
             </select>
-            <label for="characterRarity">Character rarity:</label>
+            <label for="rarity">Character rarity:</label>
         </div>
 
         <div class="">
-            <div id=""  class="" style="display: inline">
-                <select id="characterType" name="characterType" class="form-select" onchange="openInput()">
+                <select id="type" name="type"class="">
                     <option value="<%=character.type%>" selected hidden><%=character.type%></option>
                     <option value="Sniper">Sniper</option>
                     <option value="Defender">Defender</option>
@@ -49,13 +48,11 @@
                     <option value="Supporter">Supporter</option>
                     <option value="Vanguard">Vanguard</option>
                 </select>
-                <label for="characterType">characterType:</label>
-            </div>
-
+                <label for="type">characterType:</label>
         </div>
 
         <div class="">
-            <button class="" type="submit">Save</button>
+            <button class="" type="submit" formaction="/edit/update">Save</button>
             <button class="" type="submit" formaction="/edit/delete">Delete</button>
         </div>
 

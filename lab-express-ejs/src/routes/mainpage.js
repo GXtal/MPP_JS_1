@@ -7,7 +7,7 @@ const operators = require('../../entities/operators.js');
 
 Router.get('',async(req,res)=>
 {
-    res.render('mainpage');
+    res.render('mainpage', {operators : operators.getOperators()});
 })
 
 Router.post('/new', controller.createOperator);

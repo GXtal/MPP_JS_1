@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>nynaynaynayan</h1>
+    <%- include('partials/header')%>
+
+    <div class="">
+        <form>
+            <div class="">                
+                <button class="" type="submit" formmethod="get" formaction="/">Filter</button>
+                <button class="" type="submit" formmethod="post" formaction="/new">Add</button>
+            </div>
+        </form>
+
+        <div class="">
+            <% operators.forEach(function(operator){ %>
+                <%- include('partials/characterPart', {character: operator}); %>
+            <% }); %>
+        </div>
+    </div>
 </body>
 </html>

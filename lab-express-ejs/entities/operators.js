@@ -12,17 +12,17 @@ const addOperator = ()=>
         }
     }
     id++;
-    let operator = new Character(id, "Knight","Sniper",1)
-    operators.push(operator)
-    operatorsDao.rewriteOperators(operator)
-    return operators;
+    let operator = new Character(id, "Knight","Sniper",1);
+    operators.push(operator);
+    operatorsDao.rewriteOperators(operators);
+    return operator;
 }
 
 const deleteOperator=(id)=>{
     for(let i = 0; i < operators.length; i++){
         if(id == operators[i].id){
-            operators.splice(i, 1)
-            operators.rewriteHives(hives)
+            operators.splice(i, 1);
+            operatorsDao.rewriteOperators(operators);
             return true
         }
     }

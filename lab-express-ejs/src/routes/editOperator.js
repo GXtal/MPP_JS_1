@@ -5,9 +5,9 @@ const controller = require('../../controllers/operatorsController.js');
 const operators = require('../../entities/operators.js');
 
 Router.get('/', function(req, res, next) {
-
-    res.render('editOperator', {character: operators.getOperator(req.query.characterId)});
-
+    
+    let temp = operators.getOperator(req.query.id);
+    res.render('editOperator', {character: temp});
 });
 
 Router.post('/update', controller.updateOperator);

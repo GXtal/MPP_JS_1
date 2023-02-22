@@ -15,13 +15,18 @@ const deleteOperator=(req, res)=>{
 }
 
 const createOperator=(req, res)=>{
-    res.render("editOperator.ejs", {character : operators.createOperator()})
+
+    let temp = operators.addOperator();
+    console.log(temp);
+    res.render("editOperator.ejs", {character : temp})
 }
 
 const updateOperator=(req, res)=>{
     if(!req.body) return res.sendStatus(400);
 
-    let operator = new Character(parseInt(req.body.characterId, 10), req.body.characterName, req.body.characterType, req.body.characterRarity);
+    console.log(req.body);
+    
+    let operator = new Character(parseInt(req.body.id, 10), req.body.name, req.body.type, req.body.rarity);
     operators.updateOperator(operator)
     return res.redirect("/")
 }
