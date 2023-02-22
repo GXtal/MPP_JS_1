@@ -12,16 +12,21 @@ app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/img', express.static(__dirname + 'public/img'));
 app.use('/js', express.static(__dirname + 'public/js'));
+app.use('/controllers',express.static(__dirname + '/controllers'));
+app.use('/entities',express.static(__dirname + '/entities'));
 
+app.use(express.json());
 
 //templating engine
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 //routes
-const arkRouter=require('./src/routes/mainpage');
+const mainPage=require('./src/routes/mainpage');
+const editOperator = require('./src/routes/editOperator');
 
-app.use('/', arkRouter);
+app.use('/', mainPage);
+app.use('/edit',editOperator);
 
 app.use(function(req, res, next) {
     next(createError(404));
