@@ -12,9 +12,18 @@
 
     <div class="">
         <form>
-            <div class="">                
-                <button class="" type="submit" formmethod="get" formaction="/">Filter</button>
-                <button class="" type="submit" formmethod="post" formaction="/new">Add</button>
+            <div style="margin: 20px;">                
+                <select class="nice-input" name="filter">
+                    <%if(flt){%>
+                    <option value="<%=flt%>" selected hidden>By <%=flt%></option>
+                    <%}%>
+                    <option value="id">By id</option>
+                    <option value="type">By type</option>
+                    <option value="rarity">By rarity</option>
+                    <option value="level">By level</option>
+                </select>
+                <button class="nice-button" type="submit" formmethod="get" formaction="/">Filter</button>
+                <button class="nice-button" type="submit" formmethod="post" formaction="/new">Add</button>
             </div>
         </form>
 

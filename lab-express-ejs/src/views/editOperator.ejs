@@ -8,23 +8,24 @@
 <body class="">
 <%- include('partials/header')%>
 
-<div class="">
+<div class="character-edit">
     
     <form class="" method="post" action="/edit/update">
 
         <input type="hidden" name="id" value="<%=character.id%>">
-        <div class="">
-            <input id="characterId" class="" value="<%=character.id%>" disabled>
+        <div class="input-part">
             <label for="characterId">Id:</label>
+            <input id="characterId" class="nice-input" value="<%=character.id%>" disabled>            
         </div>
 
-        <div class="">
-            <input id="name" name="name" class="" value="<%=character.name%>">
+        <div class="input-part">
             <label for="name">Name:</label>
+            <input id="name" name="name" class="nice-input" value="<%=character.name%>">            
         </div>
 
-        <div class="">
-            <select id="rarity" name="rarity" class="">
+        <div class="input-part">
+            <label for="rarity">Character rarity:</label>
+            <select id="rarity" name="rarity" class="nice-input">
                 <option value="<%=character.rarity%>" selected hidden> <%=character.rarityDesc%></option>
                 <option value="6">Six star</option>
                 <option value="5">Five star</option>
@@ -32,12 +33,12 @@
                 <option value="3">Three star</option>
                 <option value="2">Two star</option>
                 <option value="1">One star</option>
-            </select>
-            <label for="rarity">Character rarity:</label>
+            </select>            
         </div>
 
-        <div class="">
-                <select id="type" name="type"class="">
+        <div class="input-part">
+            <label for="type">characterType:</label>
+                <select id="type" name="type" class="nice-input">
                     <option value="<%=character.type%>" selected hidden><%=character.type%></option>
                     <option value="Sniper">Sniper</option>
                     <option value="Defender">Defender</option>
@@ -47,13 +48,19 @@
                     <option value="Specialist">Specialist</option>
                     <option value="Supporter">Supporter</option>
                     <option value="Vanguard">Vanguard</option>
-                </select>
-                <label for="type">characterType:</label>
+                </select>                
         </div>
 
-        <div class="">
-            <button class="" type="submit" formaction="/edit/update">Save</button>
-            <button class="" type="submit" formaction="/edit/delete">Delete</button>
+        <div class="input-part">
+            <label for="level">Level:</label>
+            <input id="level_" name="level_" class="nice-input" value="<%=character.level%>" disabled>
+            <input id="level" name="level" class="nice-input" value="<%=character.level%>" hidden>
+            <button class="nice-button" type="submit" formaction="/edit/lvlup">Level Up</button>           
+        </div>
+
+        <div class="input-part">
+            <button class="nice-button" type="submit" formaction="/edit/update">Save</button>
+            <button class="nice-button" type="submit" formaction="/edit/delete">Delete</button>
         </div>
 
     </form>

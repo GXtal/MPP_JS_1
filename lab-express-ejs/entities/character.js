@@ -2,7 +2,7 @@ const maxLevels=[[30,30,40,45,50,50],
                 [NaN,NaN,55,60,70,80],
                 [NaN,NaN,NaN,70,80,90]];
                 
-const rarityDescs=["11","22","33","44","55","66"];
+const rarityDescs=["One star","Two star","Three star","Four star","Five star","Six star"];
                 
 class Character{
     constructor(id,name, type, rarity) {

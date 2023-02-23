@@ -1,11 +1,11 @@
 <div class="">
     <a href="/edit?id=<%=character.id%>">
-        <div class="">
-            <p>Operator <%=character.name%></p>           
-            <p>Rarity: <%= character.rarity%></p>
-            <p>Type: <%= character.type%></p>
-            <p>Elite <%= character.elite%></p>
-            <p>Level <%= character.level%> / <%=character.maxLevel %></p>
+        <div class="one-operator">
+            <p class="main-char-text">Operator <%=character.name%></p>           
+            <p class="main-char-text">Rarity: <%= character.rarityDesc%></p>
+            <p class="main-char-text">Type: <%= character.type%></p>
+            <p class="sub-char-text">Elite <%= character.elite%></p>
+            <p class="sub-char-text">Level <%= character.level%> / <%=character.maxLevel %></p>
         </div>
     </a>
 </div>

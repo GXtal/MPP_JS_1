@@ -27,8 +27,22 @@ const updateOperator=(req, res)=>{
     console.log(req.body);
     
     let operator = new Character(parseInt(req.body.id, 10), req.body.name, req.body.type, req.body.rarity);
+    operator.level=parseInt(req.body.level,10);
     operators.updateOperator(operator)
     return res.redirect("/")
 }
 
-module.exports = {deleteOperator, createOperator, updateOperator}
+const levelUpOperator=(req, res)=>{
+    if(!req.body) return res.sendStatus(400);
+
+    console.log("dhhgygygygyg");
+    console.log(req.body);
+    
+    let operator = new Character(parseInt(req.body.id, 10), req.body.name, req.body.type, req.body.rarity);
+    operator.levelChange(parseInt(req.body.level,10)+1)
+
+    operators.updateOperatorE(operator)
+    return res.redirect(`/edit?id=${operator.id}`);
+}
+
+module.exports = {deleteOperator, createOperator, updateOperator,levelUpOperator}

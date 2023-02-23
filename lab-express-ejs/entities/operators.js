@@ -38,6 +38,14 @@ const updateOperator=(operator)=>{
     }
     operatorsDao.rewriteOperators(operators);
 }
+const updateOperatorE=(operator)=>{
+    for(let i = 0; i < operators.length; i++){
+        if(operator.id == operators[i].id){
+            operators[i] = operator;
+            break;
+        }
+    }
+}
 
 const getOperator=(id)=>{
     let operator = null;
@@ -55,4 +63,18 @@ const getOperators=()=>{
     return operators;
 }
 
-module.exports = {addOperator, deleteOperator, updateOperator, getOperators, getOperator}
+const filterOperators=(filter)=>{
+    operators.sort((a,b)=>{
+        let A = a[filter];
+        let B = b[filter];
+        if(A > B)
+            return 1;
+        if(A < B)
+            return -1;
+        else
+            return 0;
+    })
+    return operators;
+}
+
+module.exports = {addOperator, deleteOperator, updateOperator,updateOperatorE, getOperators, getOperator,filterOperators}

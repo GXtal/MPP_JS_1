@@ -12,6 +12,7 @@ Router.get('/', function(req, res, next) {
 
 Router.post('/update', controller.updateOperator);
 Router.post('/delete', controller.deleteOperator);
+Router.post('/lvlup', controller.levelUpOperator);
 
 module.exports = Router;
 
